@@ -1,8 +1,5 @@
 # Carrot
 
-
-## Overview
-
 Carrot is a task queuing wrapper develop in PHP using the AMPQ protocol. It's currently released open source in a  BETA version. 
 
 ## How it works
