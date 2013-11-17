@@ -1,7 +1,7 @@
 #!/usr/bin/php
 <?php	
 
-	require_once 'include/autoload.php';
+	require_once __DIR__.'/../libs/Carrot/autoload.php';
 
 	try {
 

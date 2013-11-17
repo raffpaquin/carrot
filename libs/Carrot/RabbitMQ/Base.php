@@ -13,8 +13,7 @@
 		private function _getConnection(){
 			if (false === isset($this->_connection)) {
 				global $config;
-				$amqp = $config['amqp'];
-				$this->_connection = new AMQPConnection($amqp['host'], $amqp['port'], $amqp['user'], $amqp['pass']);
+				$this->_connection = new AMQPConnection($config['host'], $config['port'], $config['user'], $config['pass']);
 			}
 
 			return $this->_connection;

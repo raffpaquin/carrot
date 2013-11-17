@@ -2,11 +2,11 @@
 
 	function __autoload($name) {
 		$path = str_replace('\\', '/', $name).'.php';;
-		include_once $path;
+		include_once 'libs/'.$path;
 	}
 
-	$queue = include 'queue.php';
-	$config = include 'config.php';
+	$queue = parse_ini_file('etc/carrot.ini',true);
+	$config = parse_ini_file('etc/server.ini',true);
 
 	#Format argv in format myDoc.php -key1 value -key2 value 
 	array_shift($argv);
@@ -25,13 +25,13 @@
 
 	#Do we have environement infos
 	if (false === empty($argv['mode'])) {
-		if (in_array(mb_strtolower($argv['mode']), array(\Frankoak\Environment\Status::STAGE,\Frankoak\Environment\Status::PROD,\Frankoak\Environment\Status::LOCAL))) {
+		if (in_array(mb_strtolower($argv['mode']), array(\Carrot\Environment\Status::STAGE,\Carrot\Environment\Status::PROD,\Carrot\Environment\Status::LOCAL))) {
 			$environement = $argv['mode'];
 		}else{
-			$environement = \Frankoak\Environment\Status::STAGE;
+			$environement = \Carrot\Environment\Status::STAGE;
 		}
 	}else{
-		$environement = \Frankoak\Environment\Status::STAGE;
+		$environement = \Carrot\Environment\Status::STAGE;
 	}
 
 	define('ENV',$environement);
