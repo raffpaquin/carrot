@@ -1,10 +1,17 @@
 <?php
 
-	namespace Workers;
+	namespace Workers\Order;
 
-	class Example{
+	class Sync{
 		
 		public static function callback($message){
+
+
+			$mySql = '';
+
+
+
+
 
 			$is_success = rand(0,1);
 			if ($is_success) {

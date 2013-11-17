@@ -32,12 +32,10 @@
 					$message->delivery_info['channel']->basic_cancel($message->delivery_info['consumer_tag']);
 				}else{
 
-					//var_dump($message->delivery_info);
-					echo "Nouvelle task ".time()."\n";
-
 					try{
 						$result = call_user_func($callback, array($message));
 					}catch(\Exception $e){
+						die($e->getMessage());
 						$result = false;
 					}
 

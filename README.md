@@ -7,16 +7,17 @@ Carrot is a task queuing wrapper develop in PHP using the AMPQ protocol. It's cu
 **Create a new task**
 
 ```
-./bin/task.php -event order -payload '{"mode":"test"}'
+bin/task.php -event mybiz.example.event -payload '{"message":"hello world"}'
 ```
 
 
 
 
-**Start a worker**
+**Start workesr**
 
 ```
-./bin/worker.php -queue \\Workers\\MyModule\\MyClass
+bin/worker.php -queue \\Workers\\Example1 &
+bin/worker.php -queue \\Workers\\Example2 &
 ```
 
 
@@ -25,11 +26,15 @@ You can edit your `etc/carrot.ini` file to control you dispatch rules between yo
 
 
 ```
-[my.event]
-name =	  Order
-queue[] = \Workers\Order\Fraud\Test
-queue[] = \Workers\Order\Sync\Cloud
-queue[] = \Workers\Order\Sync\Bi
+;Define the event key
+[mybiz.example.event]
+
+;Name the event for the web interface
+name = An example event
+
+;Define each worker that will process this event
+queues[] = \Workers\Example1
+queues[] = \Workers\Example2
 ```
 
 

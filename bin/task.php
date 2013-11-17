@@ -34,9 +34,9 @@
 
 
 		#Create the F&O Producer and push the event
-		$producer = new \Frankoak\Producer($event_key, $event_data);
+		$producer = new \Carrot\Producer($event_key, $event_data);
 		$producer->setRoutingKey('frankoak.'.$environement);
-		$producer->push(new PhpAmqpLib\Message\AMQPMessage($payload_json, array('content_type' => 'text/json')));
+		$producer->push(new \PhpAmqpLib\Message\AMQPMessage($payload_json, array('content_type' => 'text/json')));
 
 	}catch(Exception $e){
 		echo PHP_EOL.

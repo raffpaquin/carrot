@@ -41,7 +41,7 @@
 				#We don't have a key, so let's put the value as the key (class) and use the default routing policy
 				if (is_int($class)) {
 					$class = $routing;
-					$routing = '*';
+					$routing = '#';
 				}
 
 				#Create the queue and link it with the exchange

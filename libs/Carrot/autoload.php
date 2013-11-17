@@ -1,8 +1,13 @@
 <?php
 
 	function __autoload($name) {
-		$path = str_replace('\\', '/', $name).'.php';;
-		include_once 'libs/'.$path;
+		$path = str_replace('\\', '/', $name).'.php';
+
+		if (file_exists('libs/'.$path)) {
+			include_once 'libs/'.$path;
+		}else if (file_exists($path)) {
+			include_once $path;
+		}
 	}
 
 	$queue = parse_ini_file('etc/carrot.ini',true);
