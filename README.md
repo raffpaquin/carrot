@@ -25,7 +25,11 @@ You can edit your `etc/carrot.ini` file to control you dispatch rules between yo
 
 
 ```
-TODO
+[my.event]
+name =	  Order
+queue[] = \Workers\Order\Fraud\Test
+queue[] = \Workers\Order\Sync\Cloud
+queue[] = \Workers\Order\Sync\Bi
 ```
 
 
