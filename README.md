@@ -16,7 +16,7 @@ Carrot is a task queuing wrapper develop in PHP using the AMPQ protocol. It's cu
 **Start a worker**
 
 ```
-./bin/worker.php -queue \\Worker\\MyModule\\MyClass
+./bin/worker.php -queue \\Workers\\MyModule\\MyClass
 ```
 
 
@@ -43,5 +43,5 @@ user = 	guest
 pass = 	guest
 host = 	localhost
 port = 	5672
-vhost = /local
+vhost = /prod
 ```
