@@ -1,3 +1,5 @@
+https://www.codeship.io/projects/99d71b80-603f-0131-895d-3e668197b56e/status
+
 # Carrot
 
 Carrot is a task queuing wrapper develop in PHP using the AMPQ protocol. It's currently released open source in a  BETA version. 
